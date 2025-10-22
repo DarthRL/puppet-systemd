@@ -149,5 +149,6 @@ type Systemd::Unit::Service = Struct[
     Optional['LoadCredentialEncrypted']   => Variant[String[0],Array[String[0],1]],
     Optional['SetCredential']             => Variant[String[0],Array[String[0],1]],
     Optional['SetCredentialEncrypted']    => Variant[String[0],Array[String[0],1]],
+    Optional['PrivateNetwork']            => Boolean,
   }
 ]
