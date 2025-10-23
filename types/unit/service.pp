@@ -118,6 +118,10 @@ type Systemd::Unit::Service = Struct[
     Optional['ExecPaths']                 => Variant[Stdlib::Unixpath,Pattern[/^-?\+?\/.+/], Array[Variant[Stdlib::Unixpath,Pattern[/^-?\+?\/.+/]],1]],
     Optional['NoExecPaths']               => Variant[Stdlib::Unixpath,Pattern[/^-?\+?\/.+/], Array[Variant[Stdlib::Unixpath,Pattern[/^-?\+?\/.+/]],1]],
     Optional['PrivateDevices']            => Boolean,
+    Optional['PrivateNetwork']            => Boolean,
+    Optional['PrivateIPC']                => Boolean,
+    Optional['PrivatePIDs']               => Boolean,
+    Optional['PrivateBPF']                => Boolean,
     Optional['RemoveIPC']                 => Boolean,
     Optional['ProtectKernelModules']      => Boolean,
     Optional['ProtectKernelTunables']     => Boolean,
@@ -145,10 +149,10 @@ type Systemd::Unit::Service = Struct[
     Optional['RootImageOptions']          => String,
     Optional['RootEphemeral']             => Boolean,
     Optional['RootHash']                  => String,
+    Optional['RootDirectory']             => Stdlib::Unixpath,
     Optional['LoadCredential']            => Variant[String[0],Array[String[0],1]],
     Optional['LoadCredentialEncrypted']   => Variant[String[0],Array[String[0],1]],
     Optional['SetCredential']             => Variant[String[0],Array[String[0],1]],
     Optional['SetCredentialEncrypted']    => Variant[String[0],Array[String[0],1]],
-    Optional['PrivateNetwork']            => Boolean,
   }
 ]
